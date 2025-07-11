@@ -1,0 +1,22 @@
+<pl-question-panel>
+<markdown>
+What are the values of `w0` and `w1` after running the following assembly?
+
+Initial values:
+- `x2` - `0x1000`
+- Memory:
+```
+0x1000:  ed ac 00 00 00 00 00  00 00 00 00 00 00 00 00
+```
+</markdown>
+<pl-code language="gas" style-name="dracula">
+ldrh w0, [x2]
+ldrsh w1, [x2]
+</pl-code>
+<pl-integer-input answers-name="w0" label="w0:" base="0"></pl-integer-input>
+<pl-integer-input answers-name="w1" label="w1:" base="0"></pl-integer-input>
+</pl-question-panel>
+
+<pl-submission-panel>
+<pre>{{feedback.consolidated}}</pre>
+</pl-submission-panel>

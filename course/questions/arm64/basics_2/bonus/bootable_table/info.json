@@ -1,0 +1,14 @@
+{
+    "uuid": "e4956914-1b46-44fb-a474-2041ef6710d3",
+    "type": "v3",
+    "title": "Bootable -> Table",
+    "topic": "ARM64 - Basics 2",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

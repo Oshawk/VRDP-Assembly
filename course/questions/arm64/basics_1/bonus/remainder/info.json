@@ -1,0 +1,14 @@
+{
+    "uuid": "069867fe-42cd-49d3-bb6f-366c0d421278",
+    "type": "v3",
+    "title": "Remainder",
+    "topic": "ARM64 - Basics 1",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "uuid": "ccc6b588-4269-4b46-aa06-cd09f6d5091a",
+    "type": "v3",
+    "title": "Varint",
+    "topic": "ARM64 - Memory and Stack 1",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

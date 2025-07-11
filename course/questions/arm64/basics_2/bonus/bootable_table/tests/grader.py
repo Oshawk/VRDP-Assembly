@@ -1,6 +1,5 @@
-from grader import ARM64Grader, AllowOpcodesFilter, AllowOperandTypesFilter, MaximumCountFilter
+from grader import ARM64Grader, MaximumCountFilter
 
-from capstone import CS_OP_REG
 from unicorn.arm64_const import *
 
 
@@ -11,19 +10,16 @@ class Grader(ARM64Grader):
 
         Grader.filter(
             code,
-            AllowOpcodesFilter("mul"),
-            AllowOperandTypesFilter(CS_OP_REG),
             MaximumCountFilter(1)
         )
 
         uc = Grader.setup_unicorn()
         
-        uc.reg_write(UC_ARM64_REG_X0, 6)
-        uc.reg_write(UC_ARM64_REG_X1, 7)
+        uc.reg_write(UC_ARM64_REG_X1, 0xb007ab1e)
         
         Grader.run_unicorn(code, uc)
         
-        solved = uc.reg_read(UC_ARM64_REG_X1) == 42
+        solved = uc.reg_read(UC_ARM64_REG_X0) == 0x7ab1e
 
         return solved, [
             ("Registers", Grader.register_snapshot(uc))

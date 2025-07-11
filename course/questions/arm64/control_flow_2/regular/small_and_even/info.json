@@ -1,0 +1,14 @@
+{
+    "uuid": "4d5b9dd1-6a25-4118-a7be-14d3620f9ce0",
+    "type": "v3",
+    "title": "Small and Even",
+    "topic": "ARM64 - Control Flow 2",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

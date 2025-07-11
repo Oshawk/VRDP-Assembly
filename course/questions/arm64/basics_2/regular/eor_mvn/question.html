@@ -1,0 +1,18 @@
+<pl-question-panel>
+<markdown>
+What is the value of `w0` after running the following assembly code?
+
+Initial values:
+- `w0` - `0xdeadbeef`
+- `w1` - `0x840c14fd`
+</markdown>
+<pl-code language="gas" style-name="dracula">
+eor w0, w0, w1
+mvn w0, w0
+</pl-code>
+<pl-integer-input answers-name="w0" label="w0:" base="0"></pl-integer-input>
+</pl-question-panel>
+
+<pl-submission-panel>
+<pre>{{feedback.consolidated}}</pre>
+</pl-submission-panel>

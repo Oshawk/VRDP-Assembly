@@ -1,0 +1,14 @@
+{
+    "uuid": "499b6e10-00a3-4a30-99c9-79c214713318",
+    "type": "v3",
+    "title": "Count the  1s",
+    "topic": "ARM64 - Control Flow 1",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

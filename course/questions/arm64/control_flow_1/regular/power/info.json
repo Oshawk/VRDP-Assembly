@@ -1,0 +1,14 @@
+{
+    "uuid": "48da656c-c8a1-4ae3-a740-cf7194a01269",
+    "type": "v3",
+    "title": "Power",
+    "topic": "ARM64 - Control Flow 1",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

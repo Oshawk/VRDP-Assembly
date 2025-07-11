@@ -1,0 +1,14 @@
+{
+    "uuid": "10c6665e-21b6-4a64-ab3e-ef7f08ecc335",
+    "type": "v3",
+    "title": "Cafe Baad + Food Beef -> Food Baad",
+    "topic": "ARM64 - Basics 2",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

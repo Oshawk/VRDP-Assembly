@@ -7,10 +7,10 @@ mkdir -p .runtime
 mkdir -p .runtime/jobs
 
 cd grader
-docker build -t assembly-grader . || exit 1
+sudo docker build -t assembly-grader . || exit 1
 cd ..
 
-docker run -it --rm -p 3000:3000 \
+sudo docker run -it --rm -p 3000:3000 \
     -v "$WD/course:/course" \
     -v "$WD/.runtime/jobs:/jobs" \
     -e HOST_JOBS_DIR="$WD/.runtime/jobs" \

@@ -11,19 +11,20 @@ class Grader(ARM64Grader):
 
         Grader.filter(
             code,
-            AllowOpcodesFilter("mul"),
+            AllowOpcodesFilter("and", "orr"),
             AllowOperandTypesFilter(CS_OP_REG),
-            MaximumCountFilter(1)
+            MaximumCountFilter(2)
         )
 
         uc = Grader.setup_unicorn()
         
-        uc.reg_write(UC_ARM64_REG_X0, 6)
-        uc.reg_write(UC_ARM64_REG_X1, 7)
-        
+        uc.reg_write(UC_ARM64_REG_X0, 0xdeadbeef)
+        uc.reg_write(UC_ARM64_REG_X1, 0xffff)
+        uc.reg_write(UC_ARM64_REG_X2, 0xf00f)
+
         Grader.run_unicorn(code, uc)
         
-        solved = uc.reg_read(UC_ARM64_REG_X1) == 42
+        solved = uc.reg_read(UC_ARM64_REG_X3) == 0xfeef
 
         return solved, [
             ("Registers", Grader.register_snapshot(uc))

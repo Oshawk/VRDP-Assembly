@@ -1,0 +1,14 @@
+{
+    "uuid": "58f8414a-2541-45fe-bbb1-6b0e1732a738",
+    "type": "v3",
+    "title": "Range Revenge",
+    "topic": "ARM64 - Memory and Stack 1",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

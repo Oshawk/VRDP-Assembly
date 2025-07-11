@@ -1,0 +1,17 @@
+<pl-question-panel>
+<markdown>
+What are the values of the flags after running the following assembly? Give your answer in the form `0bNZCV`.
+
+Initial values:
+- `w0` - `1`
+- `w1` - `2`
+</markdown>
+<pl-code language="gas" style-name="dracula">
+cmp w0, w1
+</pl-code>
+<pl-integer-input answers-name="Flags" label="Flags:" base="0"></pl-integer-input>
+</pl-question-panel>
+
+<pl-submission-panel>
+<pre>{{feedback.consolidated}}</pre>
+</pl-submission-panel>

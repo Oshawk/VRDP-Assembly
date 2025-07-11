@@ -1,0 +1,14 @@
+{
+    "uuid": "c5074845-21a9-499b-9928-2db267a8b450",
+    "type": "v3",
+    "title": "And Orr",
+    "topic": "ARM64 - Basics 2",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

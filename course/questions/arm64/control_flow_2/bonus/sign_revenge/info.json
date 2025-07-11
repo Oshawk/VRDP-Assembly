@@ -1,0 +1,14 @@
+{
+    "uuid": "58eaddb8-f8e8-42f1-8d2a-369bf6ebfa08",
+    "type": "v3",
+    "title": "Sign Revenge",
+    "topic": "ARM64 - Control Flow 2",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

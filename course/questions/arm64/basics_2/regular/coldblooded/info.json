@@ -1,0 +1,14 @@
+{
+    "uuid": "5d1bcc7d-df2f-467f-b5db-5fa689640fe2",
+    "type": "v3",
+    "title": "Coldblooded",
+    "topic": "ARM64 - Basics 2",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

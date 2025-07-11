@@ -1,0 +1,14 @@
+{
+    "uuid": "2541f083-073d-4eac-a8b1-3ecca9ede86a",
+    "type": "v3",
+    "title": "Sign",
+    "topic": "ARM64 - Control Flow 2",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

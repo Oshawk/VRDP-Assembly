@@ -1,0 +1,21 @@
+<pl-question-panel>
+<markdown>
+What is the value of `x0` after running the following assembly?
+
+Initial values:
+- `x1` - `17`
+- `x2` - `0xffffffffffb1d00f`
+- `x3` - `24`
+</markdown>
+<pl-code language="gas" style-name="dracula">
+cmp x1, x2
+csel x0, x1, x2, gt
+cmp x0, x3
+csel x0, x0, x3, gt
+</pl-code>
+<pl-integer-input answers-name="x0" label="x0:" base="0"></pl-integer-input>
+</pl-question-panel>
+
+<pl-submission-panel>
+<pre>{{feedback.consolidated}}</pre>
+</pl-submission-panel>

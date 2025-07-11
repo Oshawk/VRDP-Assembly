@@ -1,0 +1,29 @@
+<pl-question-panel>
+<markdown>
+What is the value of `x0` after running the following assembly?
+
+Initial values:
+- `x1` - `11`
+</markdown>
+<pl-code language="gas" style-name="dracula">
+    movz x2, #1
+    movz x3, #1
+
+loop:
+    sub x1, x1, #1
+    cbz x1, break
+
+    add x4, x2, x3
+    mov x2, x3
+    mov x3, x4
+    b loop
+
+break:
+    mov x0, x2
+</pl-code>
+<pl-integer-input answers-name="x0" label="x0:" base="0"></pl-integer-input>
+</pl-question-panel>
+
+<pl-submission-panel>
+<pre>{{feedback.consolidated}}</pre>
+</pl-submission-panel>

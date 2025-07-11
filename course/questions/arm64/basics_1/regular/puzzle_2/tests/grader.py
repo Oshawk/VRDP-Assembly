@@ -1,6 +1,5 @@
-from grader import ARM64Grader, AllowOpcodesFilter, DenyOpcodesFilter, AllowOperandTypesFilter, MaximumCountFilter
+from grader import ARM64Grader, AllowOpcodesFilter, MaximumCountFilter
 
-from capstone import CS_OP_REG
 from unicorn.arm64_const import *
 
 

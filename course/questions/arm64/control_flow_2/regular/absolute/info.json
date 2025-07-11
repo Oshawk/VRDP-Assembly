@@ -1,0 +1,14 @@
+{
+    "uuid": "c169eced-e721-4ac7-8397-6dfd661bad50",
+    "type": "v3",
+    "title": "Absolute",
+    "topic": "ARM64 - Control Flow 2",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

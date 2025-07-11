@@ -1,0 +1,14 @@
+{
+    "uuid": "32ffbf3f-1d05-4fe4-a4fe-8a9031053fc2",
+    "type": "v3",
+    "title": "Beatable -> Bootable",
+    "topic": "ARM64 - Basics 2",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "uuid": "f7b22bb9-2cb1-4027-b9eb-92d37c877147",
+    "type": "v3",
+    "title": "Prime",
+    "topic": "ARM64 - Control Flow 2",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

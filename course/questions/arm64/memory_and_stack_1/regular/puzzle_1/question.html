@@ -1,0 +1,31 @@
+<pl-question-panel>
+<markdown>
+What is the value of `x0` after running the following assembly?
+
+Initial values:
+- `x0` - `0`
+- `x1` - `0x1000`
+- Memory:
+```
+0x1000: 1c a7 7e 46 8a 19 bd 25 51 5a 7c 36 3e bf 26 20
+0x1010: 04 17 1a 06 e3 0f b2 08 00 00 00 00 00 fa ca de
+```
+
+</markdown>
+<pl-code language="gas" style-name="dracula">
+loop:
+    ldp w2, w3, [x1], #8
+    cbz w2, end
+    add w0, w0, w2
+    cbz w3, end
+    add w0, w0, w3
+    b loop
+end:
+</pl-code>
+<pl-integer-input answers-name="x0" label="x0:" base="0"></pl-integer-input>
+</pl-question-panel>
+
+<pl-submission-panel>
+<pre>{{feedback.consolidated}}</pre>
+</pl-submission-panel>
+

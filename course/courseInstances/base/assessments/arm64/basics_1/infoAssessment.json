@@ -47,6 +47,18 @@
                 {
                     "id": "arm64/basics_1/bonus/puzzle_3",
                     "points": 1
+                },
+                {
+                    "id": "arm64/basics_1/bonus/multiply_high",
+                    "points": 1
+                },
+                {
+                    "id": "arm64/basics_1/bonus/remainder",
+                    "points": 1
+                },
+                {
+                    "id": "arm64/basics_1/bonus/puzzle_4",
+                    "points": 1
                 }
             ]
         }

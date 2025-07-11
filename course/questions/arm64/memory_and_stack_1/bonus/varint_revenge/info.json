@@ -1,0 +1,14 @@
+{
+    "uuid": "6bf4b907-4dbc-4611-b803-c8b6becb31a6",
+    "type": "v3",
+    "title": "Varint Revenge",
+    "topic": "ARM64 - Memory and Stack 1",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}
