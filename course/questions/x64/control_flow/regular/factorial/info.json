@@ -1,0 +1,14 @@
+{
+    "uuid": "60625e36-7c0e-4ec8-a2c7-57337599cd46",
+    "type": "v3",
+    "title": "Factorial",
+    "topic": "X64 - Control Flow",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

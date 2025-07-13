@@ -1,0 +1,50 @@
+{
+    "uuid": "66ceb799-cbe7-413b-aa92-80ac43111b2c",
+    "type": "Homework",
+    "title": "X64 - Memory and Stack",
+    "set": "Quiz",
+    "module": "X64",
+    "number": "X64-MS",
+    "allowAccess": [
+        {
+            "active": true
+        }
+    ],
+    "zones": [
+        {
+            "title": "Regular",
+            "advanceScorePerc": 100,
+            "questions": [
+                {
+                    "id": "x64/memory_and_stack/regular/puzzle_1",
+                    "points": 1
+                },
+                {
+                    "id": "x64/memory_and_stack/regular/add_memory",
+                    "points": 1
+                },
+                {
+                    "id": "x64/memory_and_stack/regular/puzzle_2",
+                    "points": 1
+                },
+                {
+                    "id": "x64/memory_and_stack/regular/move_to_memory",
+                    "points": 1
+                },
+                {
+                    "id": "x64/memory_and_stack/regular/be_called",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Bonus",
+            "questions": [
+                {
+                    "id": "x64/memory_and_stack/bonus/bracket_match",
+                    "points": 1
+                }
+            ]
+        }
+    ]
+}

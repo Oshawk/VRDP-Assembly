@@ -1,0 +1,14 @@
+{
+    "uuid": "dadaf91d-e615-4156-9156-8bc532b3ebff",
+    "type": "v3",
+    "title": "Shift",
+    "topic": "X64 - Basics",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

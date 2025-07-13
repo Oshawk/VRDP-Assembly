@@ -1,0 +1,14 @@
+{
+    "uuid": "27b4b392-2ff4-4c81-b4a0-54ce9abe2d5f",
+    "type": "v3",
+    "title": "Remainder",
+    "topic": "X64 - Basics",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

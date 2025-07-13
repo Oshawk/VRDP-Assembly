@@ -1,0 +1,14 @@
+{
+    "uuid": "cf279a7b-0bf5-4d86-a0e6-9a7ad8d25fac",
+    "type": "v3",
+    "title": "Be Called",
+    "topic": "X64 - Memory and Stack",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

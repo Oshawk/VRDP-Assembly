@@ -1,0 +1,58 @@
+{
+    "uuid": "95fe0f12-ac47-4f97-8e0d-77b28085dbd0",
+    "type": "Homework",
+    "title": "X64 - Basics",
+    "set": "Quiz",
+    "module": "X64",
+    "number": "X64-B",
+    "allowAccess": [
+        {
+            "active": true
+        }
+    ],
+    "zones": [
+        {
+            "title": "Regular",
+            "advanceScorePerc": 100,
+            "questions": [
+                {
+                    "id": "x64/basics/regular/add_and_sub",
+                    "points": 1
+                },
+                {
+                    "id": "x64/basics/regular/multiply",
+                    "points": 1
+                },
+                {
+                    "id": "x64/basics/regular/remainder",
+                    "points": 1
+                },
+                {
+                    "id": "x64/basics/regular/big_move",
+                    "points": 1
+                },
+                {
+                    "id": "x64/basics/regular/shift",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Bonus",
+            "questions": [
+                {
+                    "id": "x64/basics/bonus/multiply_revenge",
+                    "points": 1
+                },
+                {
+                    "id": "x64/basics/bonus/cisc",
+                    "points": 1
+                },
+                {
+                    "id": "x64/basics/bonus/swap",
+                    "points": 1
+                }
+            ]
+        }
+    ]
+}

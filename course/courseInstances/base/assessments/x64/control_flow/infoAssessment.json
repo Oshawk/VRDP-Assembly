@@ -1,0 +1,38 @@
+{
+    "uuid": "d3578ac4-9e07-4e93-ad7b-02881e28477a",
+    "type": "Homework",
+    "title": "X64 - Control Flow",
+    "set": "Quiz",
+    "module": "X64",
+    "number": "X64-CF",
+    "allowAccess": [
+        {
+            "active": true
+        }
+    ],
+    "zones": [
+        {
+            "title": "Regular",
+            "advanceScorePerc": 100,
+            "questions": [
+                {
+                    "id": "x64/control_flow/regular/factorial",
+                    "points": 1
+                },
+                {
+                    "id": "x64/control_flow/regular/maximum",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Bonus",
+            "questions": [
+                {
+                    "id": "x64/control_flow/bonus/bit_reverse",
+                    "points": 1
+                }
+            ]
+        }
+    ]
+}

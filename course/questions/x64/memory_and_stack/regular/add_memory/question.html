@@ -1,0 +1,24 @@
+<pl-question-panel>
+<markdown>
+Add the 64-bit integer at `0x20000` to the 64-bit integer at `0x20008`, storing the result at `0x2000`.
+
+Initial values:
+- `[0x20000]`: Random between `0` and `1000000`
+- `[0x20008]`: Random between `0` and `1000000`
+
+Constraints:
+- You can only use two instructions.
+</markdown>
+<pl-file-editor
+    file-name="answer.s"
+    ace-mode="ace/mode/assembly_x86"
+    ace-theme="ace/theme/dracula"
+>
+; Enter your code here
+</pl-file-editor>
+</pl-question-panel>
+
+<pl-submission-panel>
+    <pl-external-grader-results></pl-external-grader-results>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

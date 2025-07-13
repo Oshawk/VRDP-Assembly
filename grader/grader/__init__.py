@@ -1,11 +1,12 @@
 from abc import ABC, abstractmethod
 from typing import ClassVar
 
-from capstone import Cs, CsInsn, CS_ARCH_ARM64, CS_MODE_ARM, CS_MODE_LITTLE_ENDIAN, CS_ARCH_ARM, CS_MODE_THUMB
-from keystone import Ks, KS_ARCH_ARM64, KS_MODE_ARM, KS_MODE_LITTLE_ENDIAN, KS_ARCH_ARM, KS_MODE_THUMB
-from unicorn import Uc, UC_ARCH_ARM64, UC_MODE_ARM, UC_ARCH_ARM, UC_MODE_THUMB
+from capstone import Cs, CsInsn, CS_ARCH_ARM64, CS_MODE_ARM, CS_MODE_LITTLE_ENDIAN, CS_ARCH_ARM, CS_MODE_THUMB, CS_ARCH_X86, CS_MODE_64
+from keystone import Ks, KS_ARCH_ARM64, KS_MODE_ARM, KS_MODE_LITTLE_ENDIAN, KS_ARCH_ARM, KS_MODE_THUMB, KS_ARCH_X86, KS_MODE_64
+from unicorn import Uc, UC_ARCH_ARM64, UC_MODE_ARM, UC_ARCH_ARM, UC_MODE_THUMB, UC_ARCH_X86, UC_MODE_64
 from unicorn.arm64_const import *
 from unicorn.arm_const import *
+from unicorn.x86_const import *
 
 class Filter(ABC):
     @abstractmethod
@@ -492,3 +493,178 @@ class THUMB32Grader(ARM32Grader):
             timeout=THUMB32Grader.UNICORN_TIMEOUT,
             count=THUMB32Grader.UNICORN_COUNT,
         )
+
+
+class X64Grader(GenericGrader, ABC):
+    SECTION_SIZE: ClassVar[int] = 0x10000
+    TEXT_BASE: ClassVar[int] = 1 * SECTION_SIZE
+    DATA_BASE: ClassVar[int] = 2 * SECTION_SIZE
+    STACK_BASE: ClassVar[int] = 3 * SECTION_SIZE
+    UNICORN_TIMEOUT: ClassVar[int] = 5000
+    UNICORN_COUNT: ClassVar[int] = 1000000
+    STACK_SNAPSHOT_DEPTH: ClassVar[int] = 32
+
+
+    @staticmethod
+    def assemble(assembly: str) -> bytes:
+        ks = Ks(
+            KS_ARCH_X86,
+            KS_MODE_64
+        )
+
+        return ks.asm(assembly, addr=X64Grader.TEXT_BASE, as_bytes=True)[0]
+
+
+    @staticmethod
+    def filter(code: bytes, *filters: Filter) -> None:
+        cs = Cs(CS_ARCH_X86, CS_MODE_64)
+        cs.detail = True
+
+        count = 0
+        for instruction in cs.disasm(code, X64Grader.TEXT_BASE):
+            count += 1
+
+            for filter in filters:
+                filter.filter(instruction, count)
+    
+
+    @staticmethod
+    def setup_unicorn() -> Uc:
+        uc = Uc(UC_ARCH_X86, UC_MODE_64)
+
+        uc.mem_map(X64Grader.TEXT_BASE, X64Grader.SECTION_SIZE)
+        uc.mem_map(X64Grader.DATA_BASE, X64Grader.SECTION_SIZE)
+        uc.mem_map(X64Grader.STACK_BASE, X64Grader.SECTION_SIZE)
+
+        uc.reg_write(UC_X86_REG_RIP, X64Grader.TEXT_BASE)
+        uc.reg_write(
+            UC_X86_REG_RSP, X64Grader.STACK_BASE + X64Grader.SECTION_SIZE
+        )
+
+        return uc
+
+    @staticmethod
+    def run_unicorn(code: bytes, uc: Uc) -> None:
+        if len(code) > X64Grader.SECTION_SIZE:
+            raise ValueError(f"Code is too large: {len(code)}.")
+
+        uc.mem_write(X64Grader.TEXT_BASE, code)
+
+        uc.emu_start(
+            X64Grader.TEXT_BASE,
+            X64Grader.TEXT_BASE + len(code),
+            timeout=X64Grader.UNICORN_TIMEOUT,
+            count=X64Grader.UNICORN_COUNT,
+        )
+
+
+    @staticmethod
+    def register_snapshot(uc: Uc) -> str:
+        rip_value = uc.reg_read(UC_X86_REG_RIP)
+        rbp_value = uc.reg_read(UC_X86_REG_RBP)
+        rsp_value = uc.reg_read(UC_X86_REG_RSP)
+
+        lines = [
+            f"rip:      0x{rip_value:016x}",
+            f"rsp:      0x{rsp_value:016x}",
+            f"rbp:      0x{rbp_value:016x}",
+        ]
+
+        rflags = uc.reg_read(UC_X86_REG_EFLAGS)
+        cf_flag = "C" if rflags & (1 << 0) else "c"
+        pf_flag = "P" if rflags & (1 << 2) else "p"
+        zf_flag = "Z" if rflags & (1 << 6) else "z"
+        sf_flag = "S" if rflags & (1 << 7) else "s"
+        of_flag = "O" if rflags & (1 << 11) else "o"
+        lines.append(f"flags:    {cf_flag}{pf_flag}{zf_flag}{sf_flag}{of_flag}")
+
+        registers = [
+            ("rax", UC_X86_REG_RAX),
+            ("rbx", UC_X86_REG_RBX),
+            ("rcx", UC_X86_REG_RCX),
+            ("rdx", UC_X86_REG_RDX),
+            ("rsi", UC_X86_REG_RSI),
+            ("rdi", UC_X86_REG_RDI),
+            ("r8",  UC_X86_REG_R8),
+            ("r9",  UC_X86_REG_R9),
+            ("r10", UC_X86_REG_R10),
+            ("r11", UC_X86_REG_R11),
+            ("r12", UC_X86_REG_R12),
+            ("r13", UC_X86_REG_R13),
+            ("r14", UC_X86_REG_R14),
+            ("r15", UC_X86_REG_R15),
+        ]
+
+        for i in range(0, 14, 2):
+            line_parts = []
+            for j in range(2):
+                register_index = i + j
+                if register_index < 14:
+                    reg_name, reg_const = registers[register_index]
+                    register_value = uc.reg_read(reg_const)
+                    line_parts.append(f"{reg_name}: 0x{register_value:016x}")
+            lines.append("  ".join(line_parts))
+
+        return "\n".join(lines)
+
+
+    @staticmethod
+    def stack_snapshot(uc: Uc) -> str:
+        rsp_value = uc.reg_read(UC_X86_REG_RSP)
+        rbp_value = uc.reg_read(UC_X86_REG_RBP)
+
+        if rsp_value == X64Grader.STACK_BASE + X64Grader.SECTION_SIZE:
+            return "Stack is empty."
+
+        if not (
+            X64Grader.STACK_BASE
+            <= rsp_value
+            < X64Grader.STACK_BASE + X64Grader.SECTION_SIZE
+        ):
+            return f"Stack is out of bounds: 0x{rsp_value:016x}."
+
+        if rsp_value & 0x7 != 0:
+            return f"Stack is not aligned: 0x{rsp_value:016x}."
+
+        lines = []
+
+        for i in range(X64Grader.STACK_SNAPSHOT_DEPTH):
+            offset = i * 8
+            address = rsp_value + offset
+
+            if address >= X64Grader.STACK_BASE + X64Grader.SECTION_SIZE:
+                break
+
+            value = int.from_bytes(uc.mem_read(address, 8), "little")
+            line = f"rsp + 0x{offset:02x}: 0x{value:016x}"
+
+            if address == rbp_value:
+                line += " <- rbp"
+
+            lines.append(line)
+
+        return "\n".join(lines)
+
+
+    @staticmethod
+    def memory_snapshot(uc: Uc, start_address: int, end_address: int) -> str:
+        lines = []
+        current_address = start_address & ~0xF
+        while current_address < end_address:
+            data = uc.mem_read(current_address, 16)
+
+            line = []
+            for i in range(16):
+                if start_address <= current_address + i < end_address:
+                    line.append(f"{data[i]:02x}")
+                else:
+                    line.append("  ")
+
+            hex_line = f"""{" ".join(line[:8])}  {" ".join(line[8:])}"""
+
+            line = f"0x{current_address:016x}: {hex_line}"
+            lines.append(line)
+
+            current_address += 16
+
+        return "\n".join(lines)

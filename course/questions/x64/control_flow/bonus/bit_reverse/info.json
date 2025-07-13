@@ -1,0 +1,14 @@
+{
+    "uuid": "a7f5a2ef-b0f5-48fc-9f98-91d39472f602",
+    "type": "v3",
+    "title": "Bit Reverse",
+    "topic": "X64 - Control Flow",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

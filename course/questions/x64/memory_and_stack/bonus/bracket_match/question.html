@@ -1,0 +1,31 @@
+<pl-question-panel>
+<markdown>
+Create a function named `bracket_match` that determines if each opening bracket in a string has a corresponding closing bracket. It should return `1` if they match and `0` otherwise.
+
+Arguments:
+- Null-terminated string, `0`-`100` length
+- Pointer to `0x1000` bytes of scratch space
+
+Possible characters: `()[]{}<>`
+
+Examples:
+- `()`: `1`
+- `()[]{}<>`: `1`
+- `([])`: `1`
+- `(`: `0`
+- `)()(`: `0`
+- `([)]` - `0`
+</markdown>
+<pl-file-editor
+    file-name="answer.s"
+    ace-mode="ace/mode/assembly_x86"
+    ace-theme="ace/theme/dracula"
+>
+; Enter your code here
+</pl-file-editor>
+</pl-question-panel>
+
+<pl-submission-panel>
+    <pl-external-grader-results></pl-external-grader-results>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

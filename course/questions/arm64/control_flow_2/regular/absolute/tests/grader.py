@@ -16,7 +16,7 @@ class Grader(ARM64Grader):
         )
 
         solved = True
-        for _ in range(10):
+        for _ in range(16):
             uc = Grader.setup_unicorn()
             
             while (x1 := random.randint(0, 0xffffffffffffffff)) == 0x8000000000000000:

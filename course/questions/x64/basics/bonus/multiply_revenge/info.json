@@ -1,0 +1,14 @@
+{
+    "uuid": "4b6efe19-6803-466b-bdb0-5bfca8d0b3b8",
+    "type": "v3",
+    "title": "Multiply Revenge",
+    "topic": "X64 - Basics",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

@@ -15,7 +15,9 @@ class Grader(ARM32Grader):
 
         post = """
         call_me_1:
-            ldm sp, {r4, r5, r6}
+            mov r12, sp
+            push {r4, r5, r6}
+            ldm r12, {r4, r5, r6}
 
             add r1, r1, r2, lsl #1
 
@@ -28,6 +30,7 @@ class Grader(ARM32Grader):
 
             stm r0, {r1, r3, r5, r6}
 
+            pop {r4, r5, r6}
             bx lr
 
         call_me_2:
@@ -43,7 +46,7 @@ class Grader(ARM32Grader):
         code = Grader.assemble(pre + answer + post)
 
         solved = True
-        for _ in range(10):
+        for _ in range(16):
             uc = Grader.setup_unicorn()
 
             inputs = [random.randint(0, 0xff) for _ in range(6)]

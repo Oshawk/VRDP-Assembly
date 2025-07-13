@@ -1,0 +1,14 @@
+{
+    "uuid": "9344a4d4-1922-4868-9b27-0678b806c732",
+    "type": "v3",
+    "title": "Big Move",
+    "topic": "X64 - Basics",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

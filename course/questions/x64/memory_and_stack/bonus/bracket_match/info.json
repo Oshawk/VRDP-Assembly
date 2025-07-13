@@ -1,0 +1,14 @@
+{
+    "uuid": "668c3a7b-f6d9-4114-8de7-3c82ef1048f6",
+    "type": "v3",
+    "title": "Bracket Match",
+    "topic": "X64 - Memory and Stack",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

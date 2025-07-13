@@ -1,0 +1,23 @@
+<pl-question-panel>
+<markdown>
+What are the values of `rax`-`rdx` after running the following assembly?
+
+Initial values:
+- `rax`: `10`
+- `rbx`: `20`
+- `rcx`: `30`
+- `rdx`: `40`
+
+</markdown>
+<pl-code language="gas" style-name="dracula">
+mul rbx
+</pl-code>
+<pl-integer-input answers-name="rax" label="rax:" base="0"></pl-integer-input>
+<pl-integer-input answers-name="rbx" label="rbx:" base="0"></pl-integer-input>
+<pl-integer-input answers-name="rcx" label="rcx:" base="0"></pl-integer-input>
+<pl-integer-input answers-name="rdx" label="rdx:" base="0"></pl-integer-input>
+</pl-question-panel>
+
+<pl-submission-panel>
+<pre>{{feedback.consolidated}}</pre>
+</pl-submission-panel>

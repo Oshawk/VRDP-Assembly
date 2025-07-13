@@ -20,7 +20,7 @@ def create_question(module, assessment, zone, question, title, question_type):
     
     with open(assessment_file, "r") as f:
         assessment_data = json.load(f)
-    topic = f"{assessment_data['module']} - {assessment_data['title']}"
+    topic = f"{assessment_data['title']}"
     
     template_dir = Path("util/templates") / question_type
     if not template_dir.exists():

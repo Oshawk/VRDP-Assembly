@@ -16,7 +16,7 @@ class Grader(ARM32Grader):
         )
         
         solved = True
-        for _ in range(10):
+        for _ in range(16):
             uc = Grader.setup_unicorn()
 
             if random.random() < 0.8:

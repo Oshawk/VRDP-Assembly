@@ -1,0 +1,14 @@
+{
+    "uuid": "6f2fec09-697d-45ca-b583-c4f29bc5da16",
+    "type": "v3",
+    "title": "Swap",
+    "topic": "X64 - Basics",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

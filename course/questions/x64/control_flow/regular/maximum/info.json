@@ -1,0 +1,14 @@
+{
+    "uuid": "39e5fde8-1a20-4107-ae93-5e8a7f11e3ba",
+    "type": "v3",
+    "title": "Maximum",
+    "topic": "X64 - Control Flow",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "uuid": "58f218fd-2601-4e57-8ad5-dee5f7604f94",
+    "type": "v3",
+    "title": "Add and Sub",
+    "topic": "X64 - Basics",
+    "gradingMethod": "External",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "assembly-grader",
+        "timeout": 10
+    }
+}

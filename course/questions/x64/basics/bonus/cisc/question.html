@@ -1,0 +1,17 @@
+<pl-question-panel>
+<markdown>
+What is the value of `rax` after running the following assembly?
+
+Initial values:
+- `rbx`: `0Xdeacbeef`
+- `rcx`: `0xbaadc0de`
+</markdown>
+<pl-code language="gas" style-name="dracula">
+pext rax, rbx, rcx
+</pl-code>
+<pl-integer-input answers-name="rax" label="rax:" base="0"></pl-integer-input>
+</pl-question-panel>
+
+<pl-submission-panel>
+<pre>{{feedback.consolidated}}</pre>
+</pl-submission-panel>
