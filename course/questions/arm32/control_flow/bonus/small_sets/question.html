@@ -3,18 +3,20 @@
 **ARM Mode**`
 
 Set `r0` based on the value of `r1` as follows:
-- `0` - `0x17`
-- `1` - `0x60`
-- `2` - `0xfa`
-- `3` - `0xd0`
-- `4` - `0xb0`
-- `5` - `0xad`
-- `6` - `0xed`
-- Else - `0x50`
+- `0`: `0x17`
+- `1`: `0x60`
+- `2`: `0xfa`
+- `3`: `0xd0`
+- `4`: `0xb0`
+- `5`: `0xad`
+- `6`: `0xed`
+- Else: `0x50`
+
+For example, if `r1` is `0`, `r0` should be `0x17`.
 
 Initial values:
-- `r0` - `0`
-- `r1` - Random anything
+- `r0`: `0`
+- `r1`: Random anything
 
 Constraints:
 - You can only use eleven instructions.

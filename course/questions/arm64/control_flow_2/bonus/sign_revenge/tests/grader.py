@@ -17,12 +17,12 @@ class Grader(ARM64Grader):
 
         pre = """
             bl sign
-            b end
+            b end_c1a99e2f
         """
 
         post = """
             movz x0, #0
-        end:
+        end_c1a99e2f:
         """
 
         code = Grader.assemble(pre + answer + post)

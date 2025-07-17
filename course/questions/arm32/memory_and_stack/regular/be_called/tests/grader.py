@@ -10,7 +10,7 @@ class Grader(ARM32Grader):
     def grade(answer: str) -> tuple[bool, list[tuple[str, str]]]:
         pre = """
             bl be_called
-            b end
+            b end_c1a99e2f
         """
 
         post = """
@@ -40,7 +40,7 @@ class Grader(ARM32Grader):
             bx lr
 
             mov r0, #0
-        end:
+        end_c1a99e2f:
         """
 
         code = Grader.assemble(pre + answer + post)

@@ -10,11 +10,11 @@ class Grader(ARM64Grader):
     def grade(answer: str) -> tuple[bool, list[tuple[str, str]]]:
         pre = """
             bl sort
-            b end
+            b end_c1a99e2f
         """
 
         post = """
-        end:
+        end_c1a99e2f:
         """
 
         code = Grader.assemble(pre + answer + post)

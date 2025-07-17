@@ -11,7 +11,7 @@ class Grader(X64Grader):
     def grade(answer: str) -> tuple[bool, list[tuple[str, str]]]:
         pre = """
             call be_called
-            jmp end
+            jmp end_c1a99e2f
         """
 
         post = """
@@ -52,7 +52,7 @@ class Grader(X64Grader):
             ret
 
             mov rax, 0
-        end:
+        end_c1a99e2f:
         """
 
         code = Grader.assemble(pre + answer + post)
