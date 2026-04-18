@@ -3,7 +3,7 @@
     "hasLocalAuth": true,
     "syncCoursesFromDisk": true,
     "localAuthUsers": [
-        {"uid": "admin", "name": "Admin", "password": "password", "admin": true},
-        {"uid": "student", "name": "Student", "password": "password", "enroll": true}
+        {"uid": "admin", "name": "Admin", "password": "admin", "admin": true},
+        {"uid": "student", "name": "Student", "password": "student", "enroll": true}
     ]
 }
