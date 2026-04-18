@@ -3,7 +3,6 @@
 cd "$(dirname "$0")"
 WD="$(pwd)"
 
-mkdir -p .runtime
 mkdir -p .runtime/jobs
 
 cd grader
