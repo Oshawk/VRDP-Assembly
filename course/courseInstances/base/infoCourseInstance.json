@@ -2,8 +2,6 @@
     "uuid": "81074744-7719-425f-b915-dd5523b4ebc1",
     "longName": "Base",
     "allowAccess": [
-        {
-            "uids": ["student@example.com"]
-        }
+        {"institution": "Any"}
     ]
 }

@@ -1,0 +1,9 @@
+{
+    "devMode": false,
+    "hasLocalAuth": true,
+    "syncCoursesFromDisk": true,
+    "localAuthUsers": [
+        {"uid": "admin", "name": "Admin", "password": "password", "admin": true},
+        {"uid": "student", "name": "Student", "password": "password", "enroll": true}
+    ]
+}
