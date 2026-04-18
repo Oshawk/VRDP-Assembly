@@ -26,7 +26,7 @@ class Grader(ARM64Grader):
         
             Grader.run_unicorn(code, uc)
 
-            expected = abs(int.from_bytes(x1.to_bytes(8, "big", signed=False), "big", signed=True))
+            expected = abs(int.from_bytes(x1.to_bytes(8, "little", signed=False), "little", signed=True))
         
             if uc.reg_read(UC_ARM64_REG_X0) != expected:
                 solved = False

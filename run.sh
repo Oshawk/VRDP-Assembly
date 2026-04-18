@@ -9,7 +9,7 @@ cd grader
 sudo docker build -t assembly-grader . || exit 1
 cd ..
 
-docker build -t prairielearn-password-authentication 'https://github.com/Oshawk/PrairieLearn.git#password_authentication' || exit 2
+sudo docker build -t prairielearn-password-authentication 'https://github.com/Oshawk/PrairieLearn.git#password_authentication' || exit 2
 
 sudo docker run -it --rm -p 3000:3000 \
     -v "$WD/course:/course" \

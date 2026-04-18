@@ -28,6 +28,6 @@ class Grader(X64Grader):
                 break
 
         return solved, [
-            ("Inputs", f"rbx: 0x{rbx:016x}\nrcx: 0x{rbx:016x}"),
+            ("Inputs", f"rbx: 0x{rbx:016x}\nrcx: 0x{rcx:016x}"),
             ("Registers", Grader.register_snapshot(uc))
         ]
